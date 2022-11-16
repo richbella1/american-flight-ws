@@ -1,0 +1,26 @@
+[
+  {
+    "ID": 1,
+    "code": "AF-1001",
+    "price": 400,
+    "emptySeats": 100,
+    "destination": "SFO",
+    "departureDate": "2022/11/09",
+    "planeType": {
+      "type": "Boeing",
+      "totalSeats": 200
+    }
+  },
+  {
+    "ID": 1,
+    "code": "AF-1001",
+    "price": 400,
+    "emptySeats": 100,
+    "destination": "SFO",
+    "departureDate": "2022/11/09",
+    "planeType": {
+      "type": "Boeing",
+      "totalSeats": 200
+    }
+  }
+]

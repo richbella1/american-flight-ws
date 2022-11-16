@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="american-flight" format="json">
+      <types:shape format="weave" example="example/flights-example.json"><![CDATA[%dw 2.0
+
+type american_flight = Array<{|  ID: Number {"typeId": "int"},   code: String,   price: Number {"typeId": "int"},   emptySeats: Number {"typeId": "int"},   destination: String,   departureDate: String,   planeType: {|    "type": String,     totalSeats: Number {"typeId": "int"}  |}|}> {"example": "[{\\\"ID\\\":1,\\\"code\\\":\\\"AF-1001\\\",\\\"price\\\":400,\\\"emptySeats\\\":100,\\\"destination\\\":\\\"SFO\\\",\\\"departureDate\\\":\\\"2022\\/11\\/09\\\",\\\"planeType\\\":{\\\"type\\\":\\\"Boeing\\\",\\\"totalSeats\\\":200}},{\\\"ID\\\":1,\\\"code\\\":\\\"AF-1001\\\",\\\"price\\\":400,\\\"emptySeats\\\":100,\\\"destination\\\":\\\"SFO\\\",\\\"departureDate\\\":\\\"2022\\/11\\/09\\\",\\\"planeType\\\":{\\\"type\\\":\\\"Boeing\\\",\\\"totalSeats\\\":200}}]"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#90f8a464-cf38-406c-ad2b-83bdee58df52">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="american-flight[]"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
